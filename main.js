@@ -1,22 +1,16 @@
-var MyFirstProgram1 = /** @class */ (function () {
-    function MyFirstProgram1() {
-        var argArray = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            argArray[_i] = arguments[_i];
-        }
+var Greeter = /** @class */ (function () {
+    function Greeter(first_name, last_name) {
+        this.first_name = first_name;
+        this.last_name = last_name;
     }
-    MyFirstProgram1.prototype.PrintArgs = function (argArray) {
-        console.log(argArray);
+    Greeter.prototype.showGreeting = function () {
+        var banner = document.getElementById('banner');
+        banner.innerHTML = 'Hello' + this.first_name + ' ' + this.last_name + '.';
     };
-    MyFirstProgram1.prototype.runFirst = function (callback) {
-        console.log('this method runs first!');
+    Greeter.prototype.hideGreeting = function () {
+        var banner = document.getElementById('banner');
+        banner.innerHTML = 'r1c2';
     };
-    MyFirstProgram1.prototype.runLast = function () {
-        console.log('this method runs last!');
-    };
-    MyFirstProgram1.prototype.runMiddle = function () {
-        console.log('this code run in between the other two functions...');
-    };
-    return MyFirstProgram1;
+    return Greeter;
 }());
-var newInstance = new MyfirstProgram1("a", "b", "c");
+var greeter = new Greeter('Luis', 'Dominguez');
